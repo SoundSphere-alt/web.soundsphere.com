@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Checkups | SoundSphere</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .appointment-section {
+            margin-bottom: 30px;
+        }
+        .appointment-section h3 {
+            color: #4CAF50;
+        }
+        .appointment-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .appointment-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        #device-status {
+            color: black;
+            text-align: justify;
+        }
+        #notification-list {
+            color: red;
+            text-align: justify;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Health Monitoring</h1>
+        <a href="appointments_info.html"></a>
+    </header>
+    <main>
+        <section>
+            <h2>Device Status</h2>
+            <p id="device-status">The device is functioning well. No problems found.</p>
+            <button id="check-status-btn">Check Device Status</button>
+        </section>
+        <section>
+            <h2>Notifications</h2>
+            <ul id="notification-list">
+                <li>Dr. Jane Joy updated the device checkups in the appointment management tab.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p><a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        // Load data from localStorage when the page loads
+        window.onload = function() {
+            const deviceStatus = localStorage.getItem('deviceStatus');
+            const notifications = localStorage.getItem('notifications');
+
+            if (deviceStatus) {
+                document.getElementById('device-status').textContent = deviceStatus;
+            }
+            if (notifications) {
+                document.getElementById('notification-list').innerHTML = notifications;
+            }
+        }
+
+        // Save data to localStorage when the check button is clicked
+        document.getElementById('check-status-btn').onclick = function() {
+            const deviceStatusText = 'The device is functioning well. No problems found.';
+            const notificationsText = '<li>Dr. Jane Joy updated the device checkups in the appointment management tab.</li>';
+
+            // Update the HTML
+            document.getElementById('device-status').textContent = deviceStatusText;
+            document.getElementById('notification-list').innerHTML = notificationsText;
+
+            // Save to localStorage
+            localStorage.setItem('deviceStatus', deviceStatusText);
+            localStorage.setItem('notifications', notificationsText);
+        }
+    </script>
+</body>
+</html>

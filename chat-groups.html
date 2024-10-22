@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Groups</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Link to your JavaScript file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        #chat-container {
+            display: flex;
+            width: 100%;
+            height: 80vh; /* Adjust the height as needed */
+        }
+        #sidebar {
+            width: 30%;
+            border-right: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #chat-area {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .friend {
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .friend:hover {
+            background-color: #f0f0f0;
+        }
+        #message-area {
+            margin-top: 20px;
+        }
+        #forum {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chat Groups</h1>
+        <!-- Anchor tag wrapping the Font Awesome icon -->
+        <a href="appointments_info.html">
+            <i class="fas fa-user-comments" style="font-size: 30px; cursor: pointer;"></i>
+        </a>
+    </header>
+    <main id="chat-container">
+        <div id="sidebar">
+            <h2>Friends</h2>
+            <div id="friend-list">
+                <div class="friend" onclick="selectFriend('Alice')">Alice</div>
+                <div class="friend" onclick="selectFriend('Bob')">Bob</div>
+                <div class="friend" onclick="selectFriend('Charlie')">Charlie</div>
+                <div class="friend" onclick="selectFriend('Diana')">Diana</div>
+            </div>
+            <input type="text" id="new-friend" placeholder="Add a friend">
+            <button onclick="addFriend()">ADD</button>
+        </div>
+        <div id="chat-area">
+            <h2 id="selected-friend">Select a friend to chat</h2>
+            <div id="message-area"></div>
+            <textarea id="message-input" placeholder="Type your message here..." rows="4" style="width: 100%;"></textarea>
+            <button onclick="sendMessage()">Send</button>
+            <div id="forum">
+                <h3>Forums</h3>
+                <textarea id="forum-input" placeholder="Share your interests or opinions..." rows="4" style="width: 100%;"></textarea>
+                <button onclick="postForum()">Post</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        let selectedFriend = '';
+
+        function selectFriend(name) {
+            selectedFriend = name;
+            document.getElementById('selected-friend').innerText = `Chat with ${name}`;
+            document.getElementById('message-area').innerHTML = ''; // Clear previous messages
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value;
+            if (selectedFriend && message) {
+                const messageArea = document.getElementById('message-area');
+                const newMessage = document.createElement('div');
+                newMessage.textContent = `${selectedFriend}: ${message}`;
+                messageArea.appendChild(newMessage);
+                messageInput.value = ''; // Clear input
+            }
+        }
+
+        function addFriend() {
+            const friendName = document.getElementById('new-friend').value;
+            if (friendName) {
+                const friendList = document.getElementById('friend-list');
+                const newFriend = document.createElement('div');
+                newFriend.className = 'friend';
+                newFriend.onclick = () => selectFriend(friendName);
+                newFriend.textContent = friendName;
+                friendList.appendChild(newFriend);
+                document.getElementById('new-friend').value = ''; // Clear input
+            }
+        }
+
+        function postForum() {
+            const forumInput = document.getElementById('forum-input');
+            const forumMessage = forumInput.value;
+            if (forumMessage) {
+                const forumArea = document.createElement('div');
+                forumArea.textContent = forumMessage;
+                document.getElementById('forum').appendChild(forumArea);
+                forumInput.value = ''; // Clear input
+            }
+        }
+    </script>
+</body>
+</html>

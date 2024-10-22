@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundsphere - Voice Restoration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0066cc;
+            color: white;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .circle:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0066cc;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .features-section {
+            padding: 40px;
+            background-color: #fff;
+            margin: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .feature-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feature-box h2 {
+            font-size: 1.5em;
+            color: #0066cc;
+        }
+        .feature-box p {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to SoundSphere</h1>
+        <h2>The Future of Voice Restoration</h2>
+    </header>
+
+    <div class="container">
+        <div class="circle" onclick="location.href='health-monitoring.html'">
+            <i class="fas fa-heartbeat" style="font-size: 50px;"></i>
+            <h3>Health Monitoring</h3>
+        </div>
+
+        <div class="circle" onclick="location.href='appointments-management.html'">
+            <i class="fas fa-calendar-check" style="font-size: 50px;"></i>
+            <h3>Appointments Management</h3>
+        </div>
+
+        <div class="circle" onclick="location.href='lifestyle-integration.html'">
+            <i class="fas fa-user-md" style="font-size: 50px;"></i>
+            <h3>Lifestyle Integration</h3>
+        </div>
+
+        <div class="circle" onclick="location.href='chat-groups.html'">
+            <i class="fas fa-comments" style="font-size: 50px;"></i>
+            <h3>Chat Groups</h3>
+        </div>
+
+        <div class="circle" onclick="location.href='emergency-information.html'">
+            <i class="fas fa-exclamation-circle" style="font-size: 50px;"></i>
+            <h3>Emergency Information</h3>
+        </div>
+    </div>
+
+    <!-- Key Features Section -->
+    <section class="features-section">
+        <h2 style="text-align: center;">Key Features</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h2>Natural Sound Restoration</h2>
+                <p>Utilizes advanced sound synthesis to mimic natural voice tones, helping users regain the ability to communicate clearly.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Brain-Controlled</h2>
+                <p>Integrates with neural signals to provide intuitive speech control, allowing for more natural and spontaneous vocalization.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Wireless Connectivity</h2>
+                <p>Equipped with Bluetooth for easy connectivity to smartphones and other smart devices for real-time adjustments.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Compact & Lightweight</h2>
+                <p>Designed to be discreet and comfortable for everyday wear, ensuring it blends seamlessly with the user’s lifestyle.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Customizable Voice Profiles</h2>
+                <p>Users can select from a variety of voice profiles, from different genders to personalized voice tones.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Long Battery Life</h2>
+                <p>Offers extended usage on a single charge, ensuring continuous operation throughout the day.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>About SoundSphere</h2>
+        <p>SoundSphere was created with the vision of giving a voice back to those who have lost theirs due to medical conditions. Combining the latest advancements in neural interfacing and sound generation, this device represents the future of speech restoration technology.</p>
+        
+        <h2>Contact Us</h2>
+        <p>For more information, inquiries, or support, reach out to us at <a href="mailto:info@soundsphere.com" style="color: white;">info@soundsphere.com</a>.</p>
+        <p>© 2024 SoundSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
